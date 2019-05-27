@@ -16,7 +16,7 @@ export const resolvers: IResolvers = {
 	Mutation: {
 		logout: async (_, __, { req, res }) => {
 			await new Promise(res => req.destroy(() => res()));
-			res.clearCookie('connect.sid');
+			res.clearCookie('access-token');
 			return true;
 		},
 		register: async (_, { email, password }) => {
